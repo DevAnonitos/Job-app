@@ -4,11 +4,25 @@ import { Stack, useRouter } from "expo-router";
 import { COLORS, icons, SIZES } from "../constants";
 
 const Home = () => {
+
+    const router = useRouter();
+
     return (
         <>
-            <View>
-                <Text>Home</Text>
-            </View>
+            <SafeAreaView
+                style={{
+                    flex: 1,
+                    backgroundColor: COLORS.lightWhite,
+                }}
+            >
+                <Stack.Screen
+                    options={{
+                        headerStyle: { 
+                            backgroundColor: COLORS.lightWhite, 
+                        }
+                    }}
+                />
+            </SafeAreaView>
         </>
     )
 };
