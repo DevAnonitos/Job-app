@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, ScrollView, SafeAreaView, Text, NativeModules } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import { COLORS, icons, SIZES } from "../constants";
+import { COLORS, icons, images, SIZES } from "../constants";
 import {
     Nearbyjobs,
     Popularjobs,
@@ -36,7 +36,8 @@ const Home = () => {
                         ),
                         headerRight: () => (
                             <ScreenHeaderBtn
-                                iconUrl={icons.profile}
+                                iconUrl={images.profile}
+                                dimension="100%"
                             />
                         ),
                         headerTitle: "",
@@ -54,7 +55,7 @@ const Home = () => {
                     >
                         <Welcome
 
-                        /> 
+                        />
                         <Popularjobs />
                         <Nearbyjobs />
                     </View>
