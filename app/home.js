@@ -1,7 +1,14 @@
 import React, { useState } from "react";
-import { View, ScrollView, SafeAreaView, Text } from "react-native";
+import { View, ScrollView, SafeAreaView, Text, NativeModules } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { COLORS, icons, SIZES } from "../constants";
+import {
+    Nearbyjobs,
+    Popularjobs,
+    ScreenHeaderBtn,
+    Welcome,
+} from "../components";
+
 
 const Home = () => {
 
@@ -17,11 +24,41 @@ const Home = () => {
             >
                 <Stack.Screen
                     options={{
-                        headerStyle: { 
-                            backgroundColor: COLORS.lightWhite, 
-                        }
+                        headerStyle: {
+                            backgroundColor: COLORS.lightWhite,
+                        },
+                        headerShadowVisible: false,
+                        headerLeft: () => (
+                            <ScreenHeaderBtn
+                                iconUrl={icons.menu}
+                                dimension="60%"
+                            />
+                        ),
+                        headerRight: () => (
+                            <ScreenHeaderBtn
+                                iconUrl={icons.profile}
+                            />
+                        ),
+                        headerTitle: "",
                     }}
                 />
+
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                >
+                    <View
+                        style={{
+                            flex: 1,
+                            padding: SIZES.medium,
+                        }}
+                    >
+                        <Welcome
+
+                        /> 
+                        <Popularjobs />
+                        <Nearbyjobs />
+                    </View>
+                </ScrollView>
             </SafeAreaView>
         </>
     )
