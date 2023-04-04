@@ -5,7 +5,8 @@ import {
     TextInput,
     TouchableOpacity,
     Image,
-    FlatList
+    FlatList,
+    TurboModuleRegistry
 } from 'react-native';
 
 import { useRouter } from 'expo-router';
@@ -48,6 +49,7 @@ const Welcome = () => {
                             style={styles.searchInput}
                             value=''
                             onChange={() => {}}
+                            renderToHardwareTextureAndroid={true}
                             placeholder='What are you looking for?'
                         />
                     </View>
