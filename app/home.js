@@ -54,7 +54,7 @@ const Home = () => {
                         }}
                     >
                         <Welcome
-
+                            
                         />
                         <Popularjobs />
                         <Nearbyjobs />

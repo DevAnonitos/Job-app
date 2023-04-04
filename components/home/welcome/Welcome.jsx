@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import { useRouter } from 'expo-router';
-import styles from "./welcome.style";
+import styles from "./welcome.style.js";
 import { icons, SIZES } from '../../../constants';
 
 const jobTypes = ["Full-time", "Part-time", "Contractor"];
@@ -48,9 +48,6 @@ const Welcome = () => {
                             style={styles.searchInput}
                             value=''
                             onChange={() => {}}
-                            textBreakStrategy="highQuality"
-                            returnKeyType="search"
-                            underlineColorAndroid="transparent"
                             placeholder='What are you looking for?'
                         />
                     </View>
@@ -91,7 +88,6 @@ const Welcome = () => {
                         keyExtractor={item => item}
                         contentContainerStyle={{ columnGap: SIZES.small }}
                         horizontal
-                        refreshing={true}
                     />
                 </View>
             </View>
