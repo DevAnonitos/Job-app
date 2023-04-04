@@ -12,7 +12,7 @@ import { useRouter } from 'expo-router';
 import styles from "./welcome.style";
 import { icons, SIZES } from '../../../constants';
 
-const jobTypes = ["Full-time", "Part-time", "Contractor", "Online"]
+const jobTypes = ["Full-time", "Part-time", "Contractor"];
 
 const Welcome = () => {
 
@@ -75,12 +75,23 @@ const Welcome = () => {
                         renderItem={({ item }) => (
                             <TouchableOpacity
                                 style={styles.tab(activeJobType, item)}
+                                onPre={() => {
+                                    setActiveJobType(item);
+                                    router.push(`/search/${item}`)
+
+                                }}
                             >
-                                <Text>
+                                <Text
+                                    style={styles.tabText(activeJobType, item)}
+                                >
                                     {item}
                                 </Text>
                             </TouchableOpacity>
                         )}
+                        keyExtractor={item => item}
+                        contentContainerStyle={{ columnGap: SIZES.small }}
+                        horizontal
+                        refreshing={true}
                     />
                 </View>
             </View>
