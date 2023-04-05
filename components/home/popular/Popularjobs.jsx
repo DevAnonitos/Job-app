@@ -74,7 +74,7 @@ const Popularjobs = () => {
                                     <PopularJobCard
                                         item={item}
                                         selectedJob={selectedJob}
-                                        // handleCardPress={handleCardPress}
+                                        handleCardPress={handleCardPress}
                                     />
                                 )}
                                 showsHorizontalScrollIndicator={false}
