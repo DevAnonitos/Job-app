@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, } from 'react';
 import { useRouter } from 'expo-router';
 import {
     View,
@@ -20,8 +20,9 @@ const Popularjobs = () => {
         query: "React developer",
         num_pages: "1",
     });
+    // console.log(data);
 
-    console.log(data);
+    const [selectedJob, setSelectedJob] = useState();
 
     return (
         <>
@@ -68,6 +69,7 @@ const Popularjobs = () => {
                                         item={item}
                                     />
                                 )}
+                                showsHorizontalScrollIndicator={false}
                                 keyExtractor={(item) => item.job_id}
                                 contentContainerStyle={
                                     {
