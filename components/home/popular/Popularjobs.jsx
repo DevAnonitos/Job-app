@@ -50,6 +50,7 @@ const Popularjobs = () => {
                 >
                     {isLoading ? (
                             <ActivityIndicator
+                                animating={isLoading}
                                 size="large"
                                 hidesWhenStopped={true}
                                 color={COLORS.primary}
@@ -60,6 +61,7 @@ const Popularjobs = () => {
                             </Text>
                         ): (
                             <FlatList
+                                refreshing={true}
                                 data={data}
                                 renderItem={({ item }) => (
                                     <PopularJobCard
